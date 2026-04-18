@@ -1,0 +1,51 @@
+/* Universal Wireframe Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Layout Containers */
+header, nav, main, section, footer {
+  border: 2px solid #999; /* Visible structure */
+  background: #fff;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Flexbox Grid System */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 1;
+  border: 1px dashed #ccc;
+  min-height: 100px;
+  margin: 5px;
+}
+
+/* Placeholder for Images (Visual X) */
+.image-placeholder {
+  background-color: #ddd;
+  height: 150px;
+  position: relative;
+  border: 1px solid #999;
+}
+
+.image-placeholder::before {
+  content: "X"; /* Standard wireframe shorthand for images */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 2rem;
+  color: #aaa;
+}
