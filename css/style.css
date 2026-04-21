@@ -1,4 +1,16 @@
 /* Universal Wireframe Styles */
+px solid #999; /* Visible structure */
+  background: #fff;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Flexbox Grid System */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
 * {
   box-sizing: border-box;
 }
@@ -12,19 +24,7 @@ body {
 
 /* Layout Containers */
 header, nav, main, section, footer {
-  border: 2px solid #999; /* Visible structure */
-  background: #fff;
-  margin: 10px;
-  padding: 20px;
-  text-align: center;
-}
-
-/* Flexbox Grid System */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
+  border: 2
 .column {
   flex: 1;
   border: 1px dashed #ccc;
