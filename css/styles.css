@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ 
+body{
+    height: 100%;
+    background-color: #222831;
+}
+
+.item-1, .item-2, .item-3, .item-4, .item-5, .item-6{
+    background-color: rgb(9, 155, 204);
+    height: 100px;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid black;
+
+
+}
+
+.container {
+    display: flex;
+    border: 3px solid black;
+}
