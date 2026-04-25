@@ -1,0 +1,90 @@
+
+body {
+background: #9fa4a9;
+font-family: Arial, sans-serif;
+}
+
+/* Container */
+.container {
+max-width: 320px;
+margin: 40px auto;
+
+display: flex;
+flex-direction: column;
+gap: 16px;
+}
+
+/* Shared styles */
+.header,
+.nav,
+.article,
+.aside,
+.footer {
+color: white;
+text-align: center;
+padding: 18px;
+border-radius: 12px;
+font-weight: bold;
+}
+
+/* Colors */
+.header { background: #a51c5a; }
+.nav { background: #8e44ad; } /* optional but matches video style */
+.article { background: #ff2b6a; }
+.aside { background: #1f5f8b; }
+.footer { background: #e67e22; }
+
+/* Articles wrapper (green box) */
+.articles {
+background: #2ecc71;
+padding: 16px;
+border-radius: 12px;
+
+display: flex;
+flex-direction: column;
+gap: 16px;
+}
+
+/* MAIN layout (MOBILE FIRST) */
+.main {
+display: flex;
+flex-direction: column;
+gap: 16px;
+}
+
+/* ========================= */
+/* 💻 DESKTOP VERSION */
+/* ========================= */
+@media (min-width: 768px) {
+
+.container {
+max-width: 900px;
+}
+@media (min-width: 768px) {
+
+.main {
+flex-direction: row;
+}
+
+/* 🔥 Flip positions ONLY on desktop */
+.aside {
+order: 1;   /* move to the LEFT */
+flex: 1;
+}
+
+.articles {
+order: 2;   /* move to the RIGHT */
+flex: 2;
+}
+}
+
+
+
+/* Sidebar smaller */
+.aside {
+flex: 1;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+}
