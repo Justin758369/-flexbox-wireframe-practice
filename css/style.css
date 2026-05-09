@@ -1,90 +1,95 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-background: #9fa4a9;
-font-family: Arial, sans-serif;
+  background: #d9d9d9;
+  font-family: Arial, sans-serif;
 }
 
-/* Container */
 .container {
-max-width: 320px;
-margin: 40px auto;
-
-display: flex;
-flex-direction: column;
-gap: 16px;
+  min-height: 100vh;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-/* Shared styles */
 .header,
-.nav,
-.article,
+.footer,
 .aside,
+.article {
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.header {
+  background: #a61b5d;
+  min-height: 75px;
+}
+
 .footer {
-color: white;
-text-align: center;
-padding: 18px;
-border-radius: 12px;
-font-weight: bold;
+  background: #e87722;
+  min-height: 70px;
 }
-
-/* Colors */
-.header { background: #a51c5a; }
-.nav { background: #8e44ad; } /* optional but matches video style */
-.article { background: #ff2b6a; }
-.aside { background: #1f5f8b; }
-.footer { background: #e67e22; }
-
-/* Articles wrapper (green box) */
-.articles {
-background: #2ecc71;
-padding: 16px;
-border-radius: 12px;
-
-display: flex;
-flex-direction: column;
-gap: 16px;
-}
-
-/* MAIN layout (MOBILE FIRST) */
-.main {
-display: flex;
-flex-direction: column;
-gap: 16px;
-}
-
-/* ========================= */
-/* 💻 DESKTOP VERSION */
-/* ========================= */
-@media (min-width: 768px) {
-
-.container {
-max-width: 900px;
-}
-@media (min-width: 768px) {
 
 .main {
-flex-direction: row;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-/* 🔥 Flip positions ONLY on desktop */
 .aside {
-order: 1;   /* move to the LEFT */
-flex: 1;
+  background: #156d9b;
+  min-height: 190px;
 }
 
 .articles {
-order: 2;   /* move to the RIGHT */
-flex: 2;
-}
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #3cc27a;
+  padding: 12px;
+  border-radius: 8px;
 }
 
-
-
-/* Sidebar smaller */
-.aside {
-flex: 1;
-display: flex;
-align-items: center;
-justify-content: center;
+.article {
+  background: #f21867;
+  min-height: 60px;
 }
+
+/* Desktop layout */
+@media (min-width: 768px) {
+  .main {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .aside {
+    flex: 1;
+  }
+
+  .articles {
+    flex: 3;
+  }
+}
+@media (max-width: 767px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .aside {
+    order: 2; /* move aside BELOW articles */
+  }
+
+  .articles {
+    order: 1; /* move articles ABOVE aside */
+  }
 }

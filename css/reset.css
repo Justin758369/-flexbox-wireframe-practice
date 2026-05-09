@@ -1,75 +1,85 @@
-/* Basic Reset to remove default margins, paddings, and other inconsistencies */
-*,
-*::before,
-*::after {
-    box-sizing: border-box; /* Ensure consistent box-sizing for all elements */
-    margin: 0;
-    padding: 0;
+/* reset / base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Remove default bullet styles for lists */
-ul,
-ol {
-    list-style: none;
-}
-
-/* Remove default link underline and inherit color */
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Set a consistent base font size and line-height */
-html {
-    font-size: 100%; /* 16px as default, adjust as needed */
-    line-height: 1.5;
-    -webkit-text-size-adjust: 100%; /* Prevent text resizing on mobile */
-    scroll-behavior: smooth; /* Smooth scrolling */
-}
-
-/* Ensure consistent appearance of media elements */
-img,
-picture,
-video,
-canvas {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-/* Reset form elements for consistency */
-input,
-button,
-textarea,
-select {
-    font: inherit; /* Inherit font styles from body */
-    border: none;
-    background: none;
-    outline: none;
-}
-
-/* Remove default button styling and ensure pointer cursor */
-button {
-    cursor: pointer;
-}
-
-/* Set a consistent default for body */
 body {
-    min-height: 100vh;
-    text-rendering: optimizeSpeed; /* Enhance text rendering for better performance */
-    line-height: 1.5;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #000;
 }
 
-/* Ensure consistent focus styles for accessibility */
-:focus-visible {
-    outline: 2px dashed #000; /* Customize to suit your design */
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Remove all animations and transitions for users who prefer reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation: none;
-        transition: none;
-    }
+/* shared section styling */
+.header,
+.footer,
+.article,
+.aside {
+  border: 2px solid #000;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
 }
+
+/* mobile layout */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  flex: 1;
+}
+
+.articles {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 3;
+}
+
+.article {
+  background: #e6e6e6;
+  min-height: 120px;
+}
+
+.aside {
+  background: #d9d9d9;
+  min-height: 120px;
+}
+
+.header {
+  background: #ccc;
+}
+
+.footer {
+  background: #ccc;
+  margin-top: auto;
+}
+
+/* desktop layout */
+@media (min-width: 768px) {
+  .main {
+    flex-direction: row;
+  }
+
+  .articles {
+    flex-direction: row;
+  }
+
+  .article {
+    flex: 1;
+  }
+
+  .aside {
+    flex: 1;
+    min-width: 220px;
+  }
+}
+
